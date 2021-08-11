@@ -213,7 +213,7 @@ git config --global user.name "Seu usuário"
 ```
 
 ```bash
-git config --global user.email "seu_email@gmail.cm"
+git config --global user.email "seu_email@gmail.com"
 ```
 
 #### Exemplo:
@@ -223,7 +223,7 @@ git config --global user.name "Emma Paris"
 ```
 
 ```bash
-git config --global user.email "emmaparis@gmail.cm"
+git config --global user.email "emmaparis@gmail.com"
 ```
 
 Essas informações vão ser associadas a quaisquer commits que você criar. Caso você queira configurar seu editor de código também, basta digitar:
