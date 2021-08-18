@@ -435,4 +435,49 @@ E depois só atualizar o seu repositório no GitHub:
 
 Sempre que quiser criar um novo repositório no GitHub é só seguir os passos de inicialização do repositório.
 
+### Git Pull
+
+O comando "git pull" serve para quando você adicionar algum arquivo no repositório pelo GitHub ou se estiver trabalhando em equipe e alguém fizer alguma atualização do repositório e você quer baixar a atualização do repositório para o seu repositório local:
+
+<img src = "img/github5.png">
+
+Esse aquivo "Ferrari_FF.png" eu adicionei diretamente pelo GitHub, para baixar ele para meu repositório local, basta digitar:
+
+```bash
+git pull
+```
+
+<img src="img/terminal12.png">
+
+Depois disso basta olhar no seu repositório ou digite um "ls" no seu terminal para listar os arquivos do seu repositório e os arquivos novos vão ter sido baixados:
+
+<img src="img/terminal13.png">
+
+### Git log
+
+O comando "git log" serve para mostrar todos os Commits feitos para o GitHub, mostrando a data/hora, ator(quem fez o commit(muito útil quando se está trabalhando em equipe)) e as hsat do commit(o código que fica escrito na frente da palavra commit):
+
+```bash 
+git log
+```
+
+
+
+<img src="img/terminal14.png">
+
+### Git log --decorate
+
+O comando "git log --decorate" é o mesmo que o "git log" apenas, mas esse também mostra de qual branch para qual branch foi enviado, se houve murch e quais tags foram criadas(se tiver alguns desses vai aparecer quando rodar o comando "git log --decorate"):
+
+
+
+```bash 
+git log --decorate
+```
+
+
+
+<img src="img/terminal14.png">
+
 </p>
+
