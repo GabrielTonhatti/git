@@ -2,6 +2,10 @@
 
 ###### Obs: Informações tiradas do site: <a href = "https://www.atlassian.com/br/git/tutorials/what-is-git#performance">Bitbucket </a>.
 
+<a href = "#sobre">Sobre</a> | <a href = "#instalacao">Instação</a> | <a href = "#configuracao">Configuração</a> | <a href = "#comandos">Comandos</a>
+
+<p id ="sobre">
+
 # O que é Git
 
 <a href = "#desempenho">Desempenho </a> |  <a href = "#seguranca">Segurança</a> | <a href = "#flexibilidade">Flexibilidade</a> | <a href = "#controle">Controle de versões com Git</a>
@@ -83,6 +87,8 @@ Para as equipes que vêm de um VCS não distribuído, ter um repositório centra
 Agora que você entende o que é o controle de versão, o que é o Git e por que as equipes de software deveriam optar por ele, continue lendo para descobrir os benefícios que o Git pode oferecer em toda a empresa.
 
 </p>
+
+<p id = "instalacao">
 
 # Instalar o Git
 
@@ -204,6 +210,8 @@ Antes de utilizarmos o Git, precisamos instalá-lo no Sistema Operacional que us
 
 </p>
 
+<p id = "configuracao">
+
 ## Configurações iniciais do Git
 
 Depois de ter instalado o Git, uma das primeiras coisas que devemos fazer é configurar ele com o seu nome de usuário e e-mail do Git, com os comandos a seguir:
@@ -243,4 +251,188 @@ Ele vai definir o Visual Studio Code como editor padrão do seu Git. Para ver to
 ```bash
 git config --list
 ```
+</p>
 
+<p id = "comandos">
+
+## Comandos do Git
+
+Quando você quer criar um repositório no <a href = "https://github.com/">GitHub</a>, primeiramente você deve inicializar o seu repositório local que você quer enviar para o GitHub, e para isso basta entrar no repositório(pasta) que você quer enviar para o GitHub com:
+
+```bash
+cd nome_da_pasta
+```
+
+Exemplo:
+
+```bash
+cd pasta_exemplo
+```
+
+<img src= "img/terminal.png">
+
+Depois de ter entrada no seu repositório que quer enviar para o GitHub, você deve inicializar o repositório com o comando:
+
+```bash
+git init
+```
+
+<img src= "img/terminal2.png">
+
+#### Atenção: Tome cuidado para quando for inicializar o repositório com o "git init", pois quando for enviar os arquivos para o GItHub, tudo que estiver naquele repositório vai ser enviado para o GitHub, então tenha certeza de que está na pasta certa que deseja enviar os arquivos para o GitHub, ou crie um arquivo com o nome ".gitignore", e dentro do arquivo adicione o nome dos arquivos/pastas que você não quer enviar para o GitHub.
+
+Para criar o arquivo ".gitignore", no seu terminal do Linux ou Mac, ou caso você esteja no Windows abra o gitbash(que vem na instalação do git no Windows) e digite o comando:
+
+```bash
+touch .gitignore
+```
+
+O comando touch vai criar o arquivo ".gitignore", e você pode abrir o arquivo pelo seu editor de texto ou editar pelo próprio terminal com o comando:
+
+```bash
+nano .gitignore
+```
+
+E dentro do arquivo você digita o nome do arquivo/pasta que você não quer enviar para o GitHub, fazendo assim com que os arquivos ou pastas com os nomes que você colocou dentro do .gitignore, serão ignorados na hora de enviar para o GitHub.
+
+Depois de ter inicializado o repositório com o "git init", devemos adicionar os arquivos com o comando:
+
+```bash
+git add .
+```
+
+O comando "add ." vai adicionar todos os arquivos da pasta em que você está, se você quer adicionar um arquivo especifico, basta colocar o nome do arquivo ou pasta no lugar do ".", por exemplo:
+
+<img src= "img/terminal3.png">
+
+```bash
+git add README.md
+```
+
+Depois de ter adicionado o(s) arquivo(s)/pasta(s), vamos commitar os arquivos com o comando:
+
+```bash
+git commit -m "Mensagem exemplo"
+```
+
+Exemplo:
+
+```bash
+git commit -m "First commit"
+```
+
+<img src= "img/terminal4.png">
+
+A mensagem que você coloca na hora do commit, serve para você identificar oque foi mudado ou adicionado naquele commit, então é sempre bom escolher boas mensagens para o commit quando estiver trabalho em algum projeto. Depois de ter commitado os arquivos, vamos enviar ele para o GitHub com o "push", mas antes disso, como é um repositório novo precisamos criar um branch novo e conectar ao repositório do GitHub que você quer enviar os arquivos, com o seguinte comando:
+
+```bash
+git branch -M nome_do_branch
+```
+
+Exemplo:
+
+```bash
+git branch -M main
+```
+
+<img src= "img/terminal5.png">
+
+Depois disso vamos criar o repositório no GitHub(essa parte de criar o repositório no GitHub você pode fazer antes de iniciar o repositório local com o "git init", pode ser como você prefirir), você vai em seu repositórios e clique em "New" ou "Novo" caso sua página esteja traduzida:
+
+<img src = "img/github.png">
+
+Nessa nova página você coloca o nome que quer para o repositório(sem espaços) e clique em "Create repository", vai aparecer a seuinte tela:
+
+<img src = "img/github2.png">
+
+Na nova tela vai ter os comandos para você enviar o seus arquivos para aquele repositório, mas como nos já fizemos os outros antes, vamos apenas linkar o envio dos arquivos para esse repositório com o comando:
+
+```bash
+git remote add origin urlexemplo
+```
+
+Exemplo:
+
+```bash
+git remote add origin https://github.com/GabrielTonhatti/repositorio-exemplo.git
+```
+
+Ou com o SSH:
+
+SSH(Secure Shell) é um protocolo de rede criptográfico para operar serviços de rede com segurança em uma rede não segura. Os aplicativos típicos incluem linha de comando remota, login e execução de comando remoto, mas qualquer serviço de rede pode ser protegido com SSH. E ela é bem melhor e mais segura, então indico você usar ela para fazer os envios dos seus arquivos, mas para isso antes você precisa criar uma nova chave SSH, segue um vídeo para criar a chave SSH no seu GitHub: <a href = "https://www.youtube.com/watch?v=7YVQLZp1jb0&t=159s">Criar chave SSH</a>.
+
+```bash
+git remote add origin git@github.com:GabrielTonhatti/repositorio-exemplo.git
+```
+
+<img src= "img/terminal6.png">
+
+Depois de ter linkado o seu repositório com o repositório do GitHub, vamos fazer o push com o comando:
+
+```bash
+git push -u origin main
+```
+
+<img src= "img/terminal7.png">
+
+O "main" é o nome da branch que você criou. Se você tiver usado pela chave SSH, provavelmente ele vai pedir a senha que você cadastrou na hora de gerar a chave SSH, basta apenas digitar a senha e dar um "ENTER" que será enviado. Depois disso é só atualizar a página no GitHub que já vai ter sido enviado:
+
+<img src= "img/github3.png">
+
+E os arquivos vão estar no seu repositório como esperado, caso você queira adicionar mais arquivos no seu repositório ou atualizar os que você já enviou, digite o seguinte comando para ver o status do seu repositório após atualizar ou adicionar novos arquivos/pasta no seu repositório local:
+
+```bash
+git status
+```
+
+<img src = "img/terminal8.png">
+
+Ele vai mostrar todos os arquivos que foram modificados, e os arquivos/pasta novos, agora vamos adicionar eles com o "git add":
+
+```bash
+git add .
+```
+
+Ele vai adicionar todos os arquivos modificados ou os novos arquivos/pasta, agora vamos verificar novamente com o "git status":
+
+```bash
+git status
+```
+
+<img src = "img/terminal9.png">
+
+Agora os arquivos/pasta estão em verde que foram adicionados no git, e agora vamos commitar os arquivos e usar uma mensagem diferente:
+
+```bash
+git commit -m "Mensagem"
+```
+
+Exemplo:
+
+```bash
+git commit -m "Atualizando os arquivos"
+```
+
+<img src = "img/terminal10.png">
+
+E por último é só enviar com o "push":
+
+```bash
+git push -u origin main
+```
+
+Ou
+
+```bash
+git push
+```
+
+<img src = "img/terminal11.png">
+
+E depois só atualizar o seu repositório no GitHub:
+
+<img src = "img/github4.png">
+
+Sempre que quiser criar um novo repositório no GitHub é só seguir os passos de inicialização do repositório.
+
+</p>
