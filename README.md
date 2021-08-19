@@ -479,5 +479,135 @@ git log --decorate
 
 <img src="img/terminal14.png">
 
+### Git log --author="nome"
+
+O comando "git log --author='nome' " serve para você ver os commits de uma pessoa especifica que você esta trabalhando junto:
+
+```bash
+git log --author='nome'
+```
+
+Exemplo:
+
+```bash
+git log --author='Gabriel Tonhatti'
+```
+
+<img src="img/terminal15.png">
+
+<img src="img/terminal16.png">
+
+### Git log --graph
+
+O comando "git log --graph" serve para mostrar os commits em forma de gráficos:
+
+```bash
+git log --graph
+```
+
+<img src="img/terminal17.png">
+
+### Git shortlog
+
+O git shortlog mostra em ordem alfabetica quais foram os autores, quantos commits cada um fez e a mensagem do commit de cada um:
+
+```bash
+git shortlog
+```
+
+<img src="img/terminal18.png">
+
+Git shortlog -sn
+
+Já o comando git shorlog -sn mostra apenas o autor do commit e a quantidade de  commits que ele fez:
+
+```bash
+git shortlog -sn
+```
+
+
+
+<img src="img/terminal19.png">
+
+### Git show
+
+Esse comando mostra oque foi adicionado ou alterado no commit:
+
+```bash
+git show exemplo
+```
+
+Exemplo:
+
+```bash
+git show 23c2544729c69e8b206a71e609f7a9472803abc6
+```
+
+<img src="img/terminal20.png">
+
+Esse código é o identificador do commit pelo git, para você encontrar ele, basta digitar: git log, e na frente da palavra "commit" vai ter o código de cada commit:
+
+<img src="img/terminal21.png">
+
+### Git diff
+
+O git diff mostra as alterações no arquivo antes de você fazer o commit para o GitHub:
+
+```bash
+git diff
+```
+
+<img src="img/terminal22.png">
+
+### Git diff --name-only
+
+O git diff --name-only é o mesmo do git diff, a diferença é que ele vai mostrar apenas o nome do arquivo modificado antes de fazer o commit:
+
+```bash
+git diff --name-only
+```
+
+<img src="img/terminal23.png">
+
+### Git checkout arquivo
+
+O git checkou serve para você desfazer as alterações de um arquivo em específico antes de adicionar ele com o "git add":
+
+```bash
+git checkout nome_do_arquivo
+```
+
+Exemplo:
+
+```bash
+git checkout README.md
+```
+
+<img src="img/terminal24.png">
+
+### Git reset HEAD nomedoarquivo
+
+o git rset HEAD remove o arquivo adicionado com o "git add":
+
+```bash
+git reset HEAD nome_do_arquivo
+```
+
+Exemplo:
+
+```bash
+git reset HEAD README.md
+```
+
+<img src="img/terminal25.png">
+
+<img src="img/terminal26.png">
+
+Esse comando é muito bom para quando você adicionou algum arquivo que esqueceu de adicionar no ".gitignore", ou que não quer adicionar no GitHub no momento.
+
+
+
+
+
 </p>
 
